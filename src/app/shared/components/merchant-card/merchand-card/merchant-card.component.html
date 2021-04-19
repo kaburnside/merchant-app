@@ -1,0 +1,10 @@
+<div class="card-wrapper">
+  <div class="card-content">
+    <img [src]="thumbnail"  alt="thumbnail" class="card-thumbnail"/>
+    <div class="card-information">
+      <span class="card-title" [title]="title">{{title}}</span>
+      <span class="card-amounts">${{minAmount |  number}} - ${{maxAmount | number}}</span>
+      <a class="website-text" target="_blank" [href]="website">View Website</a>
+    </div>
+  </div>
+</div>

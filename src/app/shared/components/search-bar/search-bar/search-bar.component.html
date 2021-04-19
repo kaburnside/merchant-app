@@ -1,0 +1,10 @@
+<label for="search-box">
+</label>
+<input
+       aria-label="Search Input"
+       class="search-input fas fa-search"
+       #searchBox
+       id="search-box"
+       (keyup)="searchInputEmitter.emit(searchBox.value)"
+       type="text"
+       placeholder="&#xF002; {{placeholderText}}" />

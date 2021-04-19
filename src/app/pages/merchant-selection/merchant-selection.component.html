@@ -1,0 +1,11 @@
+<h2>Select a Merchant</h2>
+<div class="merchant-container">
+<app-filter-dropdown *ngIf="filterOptions.length > 0" [filterPlaceHolder]="dropdownPlaceHolder" [filterOptions]="filterOptions" (dropdownSelectionChange)="handleDropDownSelection($event)"></app-filter-dropdown>
+<app-search-bar class="merchant-search-bar"  [placeholderText]="placeholder" (searchInputEmitter)="handleSearch($event)"></app-search-bar>
+<app-merchant-card  *ngFor="let merchant of merchantService.getMerchantList() | async"
+  [title]='merchant.name'
+  [thumbnail]='merchant.image'
+  [minAmount]='merchant.minAmount'
+  [maxAmount]='merchant.maxAmount'
+  [website]='merchant.website'></app-merchant-card>
+</div>
